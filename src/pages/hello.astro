@@ -1,0 +1,14 @@
+---
+import { getLocale } from "astro-i18n-aut";
+import BaseLayout from "../components/BaseLayout.astro";
+
+const locale = getLocale(Astro.url);
+let msg = "Hello";
+if (locale == "es") msg = "hola";
+if (locale == "fr") msg = "bonjour";
+if (locale == "de") msg = "halo";
+---
+
+<BaseLayout>
+  <h1>{msg}</h1>
+</BaseLayout>
