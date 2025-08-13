@@ -4,11 +4,11 @@ import { defineConfig } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 
-const defaultLocale = "en";
+const defaultLocale = "de";
 const locales = {
-  en: "en-US", // the `defaultLocale` value must present in `locales` keys
-  es: "es-ES",
   de: "de-DE",
+  en: "en-US", // the `defaultLocale` value must present in `locales` keys
+  fr: "fr-FR",
 };
 
 // https://astro.build/config
