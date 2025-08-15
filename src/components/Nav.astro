@@ -1,0 +1,78 @@
+---
+import { getLocale } from "astro-i18n-aut";
+import { getTranslation } from "../utils/i18n";
+import LanguagePicker from "./ui/LanguagePicker.astro";
+
+const navLinkPromises = [
+  "services",
+  "about",
+  "training",
+  "charter",
+  "jobs",
+  "contact",
+].map((t) => getTranslation(getLocale(Astro.url), t));
+const navLinks = await Promise.all(navLinkPromises);
+---
+
+<nav class="root">
+  <div class="logo-container">
+    <!-- <Image src={logoSrc} alt="Logo" width={64} height={64} /> -->
+    <h1 class="title">Amani Care</h1>
+  </div>
+  <div class="links-container">
+    <ul class="nav-links">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a href={`#${link?.data.toLowerCase()}`}>
+              {link?.data.toUpperCase()}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <LanguagePicker />
+  </div>
+</nav>
+
+<style>
+  .title {
+    font-size: 2.2rem;
+  }
+  .root {
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+    padding: 0 2rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .logo-container {
+    margin-right: 2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  .nav-links li {
+    font-size: 1rem;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #cccccc;
+  }
+</style>

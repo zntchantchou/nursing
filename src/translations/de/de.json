@@ -1,4 +1,10 @@
 {
   "greeting": "halo!",
-  "bye": "auf wieder..."
+  "bye": "auf wieder...",
+  "services": "Dienstleistungen",
+  "about": "Über",
+  "training": "Schulung",
+  "charter": "Charta",
+  "jobs": "Jobs",
+  "contact": "Kontakt"
 }

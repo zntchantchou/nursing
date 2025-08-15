@@ -1,4 +1,10 @@
 {
   "greeting": "bonjour!",
-  "bye": "au revoir"
+  "bye": "au revoir",
+  "services": "Services",
+  "about": "À propos",
+  "training": "Formation",
+  "charter": "Charte",
+  "jobs": "Emplois",
+  "contact": "Contact"
 }

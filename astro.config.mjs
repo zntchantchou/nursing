@@ -6,10 +6,11 @@ import sitemap from "@astrojs/sitemap";
 
 const defaultLocale = "de";
 const locales = {
-  de: "de-DE",
-  en: "en-US", // the `defaultLocale` value must present in `locales` keys
-  fr: "fr-FR",
+  de: "de",
+  en: "en", // the `defaultLocale` value must present in `locales` keys
+  fr: "fr",
 };
+// const locales = ["de", "en", "fr"];
 
 // https://astro.build/config
 export default defineConfig({
