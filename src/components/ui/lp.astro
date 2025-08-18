@@ -1,0 +1,120 @@
+---
+import { Image } from "astro:assets";
+import franceLogo from "../../assets/france.png";
+import germanyLogo from "../../assets/germany.png";
+import ukLogo from "../../assets/uk.png";
+import { getLocale } from "astro-i18n-aut";
+import { getCurrentLocaleUrl } from "../../utils/i18n";
+
+const languages = [
+  { code: "en", label: "EN", logo: ukLogo },
+  { code: "de", label: "DE", logo: germanyLogo },
+  { code: "fr", label: "FR", logo: franceLogo },
+];
+
+interface Props {
+  initialLang?: string;
+}
+
+const defaultLang = languages.find((l) => (l.code = "de"));
+const locale = getLocale(Astro.url);
+const isCurrentLocale = (code: string) => {
+  console.log("code != locale", code != locale);
+  return code === locale;
+};
+---
+
+<div class="language-picker">
+  <div class="selected-lang">
+    <span class="lang-label">{locale}</span>
+    <Image
+      src={defaultLang?.logo as ImageMetadata}
+      alt={`${locale} flag`}
+      width="24"
+      height="24"
+    />
+  </div>
+  <div class="lang-options">
+    {
+      languages
+        .filter((l) => !isCurrentLocale(l.code))
+        .map((lang) => (
+          <a
+            href={getCurrentLocaleUrl(Astro.url, lang.code)}
+            class="lang-option"
+          >
+            <span class="lang-label">{lang.label}</span>
+            <Image
+              src={lang.logo}
+              alt={`${lang.label} flag`}
+              width="24"
+              height="24"
+            />
+          </a>
+        ))
+    }
+  </div>
+</div>
+
+<style>
+  .language-picker {
+    height: 4rem;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .lang-option,
+  .language-picker {
+    padding: 0.2rem 1rem;
+  }
+  .selected-lang {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .lang-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    color: white;
+    background-color: #1a1a1a;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .language-picker:hover .lang-options {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lang-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+  }
+
+  .lang-option:hover {
+    background: #383737;
+  }
+
+  .lang-label {
+    font-size: 1rem;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+</style>

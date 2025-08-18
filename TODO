@@ -1,5 +1,13 @@
 TODO:
-☐ create side menu
-☐ create header
-☐ create files for translations @started(25-08-13 10:16)
-☐ check for domain name availability
+  ✔ create web nav menu @done(25-08-18 10:32)
+  ✔ create files for translations @started(25-08-13 10:16) @done(25-08-18 10:32) @lasted(5d16m26s)
+  ☐ create language picker @started(25-08-18 10:43)
+  ☐ create mobile side menu
+  ☐ check for domain name availability
+
+Business:
+  ☐ Curate list of designs
+  ☐ ask for three or four colours to create palette
+  ☐ choose price for yearly hosting 
+  ☐ choose between css and tailwind
+  ☐ create one page per nav link

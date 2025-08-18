@@ -1,8 +1,9 @@
 ---
 import { getLocale } from "astro-i18n-aut";
 import { getTranslation } from "../utils/i18n";
-import LanguagePicker from "./ui/LanguagePicker.astro";
+import LanguagePicker from "./ui/lp.astro";
 
+const locale = getLocale(Astro.url);
 const navLinkPromises = [
   "services",
   "about",
@@ -10,7 +11,7 @@ const navLinkPromises = [
   "charter",
   "jobs",
   "contact",
-].map((t) => getTranslation(getLocale(Astro.url), t));
+].map((t) => getTranslation(locale, t));
 const navLinks = await Promise.all(navLinkPromises);
 ---
 
@@ -24,15 +25,13 @@ const navLinks = await Promise.all(navLinkPromises);
       {
         navLinks.map((link) => (
           <li>
-            <a href={`#${link?.data.toLowerCase()}`}>
-              {link?.data.toUpperCase()}
-            </a>
+            <a href={`#/${locale}/${link?.id}`}>{link?.data.toUpperCase()}</a>
           </li>
         ))
       }
     </ul>
-    <LanguagePicker />
   </div>
+  <LanguagePicker />
 </nav>
 
 <style>
