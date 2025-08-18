@@ -1,4 +1,7 @@
 import { getEntry } from "astro:content";
+import germanyLogo from "../assets/germany.png";
+import ukLogo from "../assets/uk.png";
+import franceLogo from "../assets/france.png";
 
 export const getTranslation = async (locale: string, key: string) => {
   try {
@@ -18,8 +21,7 @@ export const getCurrentLocaleUrl = (url: URL, locale: string): string => {
     return result;
   }
   const urlStart = url.toString().slice(0, 7 + url.host.length) + "/" + locale;
-  const updatedUrl = urlStart + url.pathname;
-  return updatedUrl;
+  return urlStart + url.pathname;
 };
 
 export enum AppLocaleEnum {
@@ -27,3 +29,19 @@ export enum AppLocaleEnum {
   "FR" = "fr",
   "DE" = "de",
 }
+
+type Language = {
+  logo: ImageMetadata;
+  code: AppLocaleEnum;
+  label: string;
+};
+
+export const languages: Language[] = [
+  { code: AppLocaleEnum.DE, label: "DE", logo: germanyLogo },
+  { code: AppLocaleEnum.EN, label: "EN", logo: ukLogo },
+  { code: AppLocaleEnum.FR, label: "FR", logo: franceLogo },
+];
+
+export const getLanguageByLocale = (locale: AppLocaleEnum) => {
+  return languages.find((l) => l.code === locale);
+};

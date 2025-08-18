@@ -1,34 +1,28 @@
 ---
-import { Image } from "astro:assets";
-import franceLogo from "../../assets/france.png";
-import germanyLogo from "../../assets/germany.png";
-import ukLogo from "../../assets/uk.png";
 import { getLocale } from "astro-i18n-aut";
-import { getCurrentLocaleUrl } from "../../utils/i18n";
-
-const languages = [
-  { code: "en", label: "EN", logo: ukLogo },
-  { code: "de", label: "DE", logo: germanyLogo },
-  { code: "fr", label: "FR", logo: franceLogo },
-];
+import {
+  getCurrentLocaleUrl,
+  getLanguageByLocale,
+  languages,
+} from "../../utils/i18n";
 
 interface Props {
   initialLang?: string;
 }
 
-const defaultLang = languages.find((l) => (l.code = "de"));
 const locale = getLocale(Astro.url);
 const isCurrentLocale = (code: string) => {
-  console.log("code != locale", code != locale);
   return code === locale;
 };
+const curLang = getLanguageByLocale(locale);
+const availableLanguages = languages.filter((l) => !isCurrentLocale(l.code));
 ---
 
 <div class="language-picker">
   <div class="selected-lang">
-    <span class="lang-label">{locale}</span>
-    <Image
-      src={defaultLang?.logo as ImageMetadata}
+    <span class="lang-label">{locale.toUpperCase()}</span>
+    <img
+      src={curLang?.logo.src}
       alt={`${locale} flag`}
       width="24"
       height="24"
@@ -36,22 +30,17 @@ const isCurrentLocale = (code: string) => {
   </div>
   <div class="lang-options">
     {
-      languages
-        .filter((l) => !isCurrentLocale(l.code))
-        .map((lang) => (
-          <a
-            href={getCurrentLocaleUrl(Astro.url, lang.code)}
-            class="lang-option"
-          >
-            <span class="lang-label">{lang.label}</span>
-            <Image
-              src={lang.logo}
-              alt={`${lang.label} flag`}
-              width="24"
-              height="24"
-            />
-          </a>
-        ))
+      availableLanguages.map((lang) => (
+        <a href={getCurrentLocaleUrl(Astro.url, lang.code)} class="lang-option">
+          <span class="lang-label">{lang.label}</span>
+          <img
+            src={lang.logo.src}
+            alt={`${lang.label} flag`}
+            width="24"
+            height="24"
+          />
+        </a>
+      ))
     }
   </div>
 </div>
@@ -59,13 +48,16 @@ const isCurrentLocale = (code: string) => {
 <style>
   .language-picker {
     height: 4rem;
-    background-color: #1a1a1a;
     display: flex;
-    align-items: center;
+    width: 3rem;
     cursor: pointer;
     position: relative;
   }
 
+  .lang-option > img,
+  .selected-lang > img {
+    margin-left: 0.5rem;
+  }
   .lang-option,
   .language-picker {
     padding: 0.2rem 1rem;
@@ -73,8 +65,6 @@ const isCurrentLocale = (code: string) => {
   .selected-lang {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
   }
 
   .lang-options {
@@ -82,6 +72,7 @@ const isCurrentLocale = (code: string) => {
     position: absolute;
     top: 100%;
     left: 0;
+    right: 0;
 
     color: white;
     background-color: #1a1a1a;
