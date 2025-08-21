@@ -1,0 +1,210 @@
+[
+  {
+    "id": "1",
+    "leistungsKomplex": "Erweiterte kleine Körperpflege",
+    "punktzahl": 309,
+    "betrag": 25.51,
+    "zuschlag": 0.59,
+    "gesamtpreis": 26.1
+  },
+  {
+    "id": "2",
+    "leistungsKomplex": "Kleine Körperpflege",
+    "punktzahl": 206,
+    "betrag": 17.01,
+    "zuschlag": 0.39,
+    "gesamtpreis": 17.4
+  },
+  {
+    "id": "3a",
+    "leistungsKomplex": "Erweiterte große Körperpflege ohne Baden",
+    "punktzahl": 464,
+    "betrag": 38.3,
+    "zuschlag": 0.88,
+    "gesamtpreis": 39.18
+  },
+  {
+    "id": "3b",
+    "leistungsKomplex": "Erweiterte große Körperpflege mit Baden",
+    "punktzahl": 618,
+    "betrag": 51.02,
+    "zuschlag": 1.17,
+    "gesamtpreis": 52.19
+  },
+  {
+    "id": "4",
+    "leistungsKomplex": "Große Körperpflege",
+    "punktzahl": 412,
+    "betrag": 34.01,
+    "zuschlag": 0.78,
+    "gesamtpreis": 34.79
+  },
+  {
+    "id": "5",
+    "leistungsKomplex": "Laggern/Betten",
+    "punktzahl": 103,
+    "betrag": 8.5,
+    "zuschlag": 0.2,
+    "gesamtpreis": 8.7
+  },
+  {
+    "id": "6",
+    "leistungsKomplex": "Hilfe bei der Nahrungsaufnahme",
+    "punktzahl": 258,
+    "betrag": 21.3,
+    "zuschlag": 0.49,
+    "gesamtpreis": 21.79
+  },
+  {
+    "id": "7a",
+    "leistungsKomplex": "Darm- und Blasenentleerung LK 7a",
+    "punktzahl": 82,
+    "betrag": 6.77,
+    "zuschlag": 0.16,
+    "gesamtpreis": 6.93
+  },
+  {
+    "id": "7b",
+    "leistungsKomplex": "Darm- und Blasenentleerung LK 7b",
+    "punktzahl": 206,
+    "betrag": 17.01,
+    "zuschlag": 0.39,
+    "gesamtpreis": 17.4
+  },
+  {
+    "id": "8a",
+    "leistungsKomplex": "Hilfestellung beim Verlassen der Wohnung LK 8a",
+    "punktzahl": 72,
+    "betrag": 5.94,
+    "zuschlag": 0.14,
+    "gesamtpreis": 6.08
+  },
+  {
+    "id": "8b",
+    "leistungsKomplex": "Hilfestellung beim Wiederaufsuchen der Wohnung LK 8b",
+    "punktzahl": 72,
+    "betrag": 5.94,
+    "zuschlag": 0.14,
+    "gesamtpreis": 6.08
+  },
+  {
+    "id": "9",
+    "leistungsKomplex": "Begleitung außer Haus",
+    "punktzahl": 618,
+    "betrag": 51.02,
+    "zuschlag": 1.17,
+    "gesamtpreis": 52.19
+  },
+  {
+    "id": "10",
+    "leistungsKomplex": "Beneizen der wonnung",
+    "punktzahl": 120,
+    "betrag": 9.91,
+    "zuschlag": 0.23,
+    "gesamtpreis": 10.14
+  },
+  {
+    "id": "11a",
+    "leistungsKomplex": "Reinigung der Wohnung LK 11a",
+    "punktzahl": 90,
+    "betrag": 7.43,
+    "zuschlag": 0.17,
+    "gesamtpreis": 7.6
+  },
+  {
+    "id": "11b",
+    "leistungsKomplex": "Reinigung der Wohnung LK 11b",
+    "punktzahl": 270,
+    "betrag": 22.29,
+    "zuschlag": 0.51,
+    "gesamtpreis": 22.8
+  },
+  {
+    "id": "11c",
+    "leistungsKomplex": "Reinigung der Wohnung LK 11c",
+    "punktzahl": 1200,
+    "betrag": 99.06,
+    "zuschlag": 2.28,
+    "gesamtpreis": 101.34
+  },
+  {
+    "id": "12",
+    "leistungsKomplex": "Wechseln und Waschen der Wäsche und Kleidung",
+    "punktzahl": 480,
+    "betrag": 39.62,
+    "zuschlag": 0.91,
+    "gesamtpreis": 40.53
+  },
+  {
+    "id": "13",
+    "leistungsKomplex": "Einkaufen",
+    "punktzahl": 240,
+    "betrag": 19.81,
+    "zuschlag": 0.46,
+    "gesamtpreis": 20.27
+  },
+  {
+    "id": "14",
+    "leistungsKomplex": "Zubereitung einer warmen Mahlzeit in der Häuslichkeit des Flegededunigen",
+    "punktzahl": 270,
+    "betrag": 22.29,
+    "zuschlag": 0.51,
+    "gesamtpreis": 22.8
+  },
+  {
+    "id": "15",
+    "leistungsKomplex": "Zubereitung einer sonstigen Mahlzeit in der Häuslichkeit des Pflegebedürftigen",
+    "punktzahl": 90,
+    "betrag": 7.43,
+    "zuschlag": 0.17,
+    "gesamtpreis": 7.6
+  },
+  {
+    "id": "16a",
+    "leistungsKomplex": "Erstbesuch",
+    "punktzahl": 700,
+    "betrag": 57.79,
+    "zuschlag": 1.33,
+    "gesamtpreis": 59.12
+  },
+  {
+    "id": "16b",
+    "leistungsKomplex": "Folgebesuch",
+    "punktzahl": 300,
+    "betrag": 24.77,
+    "zuschlag": 0.57,
+    "gesamtpreis": 25.34
+  },
+  {
+    "id": "17a",
+    "leistungsKomplex": "Einsatzpauschale LK 17a",
+    "punktzahl": 65,
+    "betrag": 5.37,
+    "zuschlag": 0.12,
+    "gesamtpreis": 5.49
+  },
+  {
+    "id": "17b",
+    "leistungsKomplex": "Einsatzpauschale LK 17b",
+    "punktzahl": 130,
+    "betrag": 10.73,
+    "zuschlag": 0.25,
+    "gesamtpreis": 10.98
+  },
+  {
+    "id": "19a",
+    "leistungsKomplex": "Versorgung und Betreuung in Wohngemeinschaften von Pflegebedürftigen der Pflegegrade 4 bis 5 LK 19a",
+    "punktzahl": 2282,
+    "betrag": 188.38,
+    "zuschlag": 4.34,
+    "gesamtpreis": 192.72
+  },
+  {
+    "id": "20",
+    "leistungsKomplex": "Betreuungsmaßnahmen",
+    "punktzahl": 100,
+    "betrag": 8.26,
+    "zuschlag": 0.19,
+    "gesamtpreis": 8.45
+  }
+]
