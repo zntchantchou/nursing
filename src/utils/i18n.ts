@@ -10,10 +10,12 @@ export const getTranslation = async (
 ) => {
   try {
     if (!sectionName) return getEntry(locale, key);
-    const sectionTranslations = await getEntry(locale, sectionName);
-    if (sectionTranslations) {
-      const data = sectionTranslations?.body;
-      console.log("data ", data);
+    const sections = await getEntry(locale, "sections");
+    console.log("sections ", sections);
+    if (sections) {
+      console.log(`hello`);
+      const sectionData = sections?.data;
+      console.log("data ", sectionData);
       const errorMsg =
         "translation not found for key: " +
         key +
@@ -21,15 +23,19 @@ export const getTranslation = async (
         locale +
         " and section: " +
         sectionName;
-      if (!data) throw errorMsg;
-      const t = JSON.parse(data)[key];
-      if (!t) throw errorMsg;
-      return t;
+      if (!sectionData) throw errorMsg;
+      const sectionTranslations = sectionData[sectionName];
+      if (!sectionTranslations) throw errorMsg;
+      const translation = sectionTranslations[key];
+      if (!translation) throw errorMsg;
+      console.log("translation: ", translation);
+      return translation;
     }
   } catch (e) {
     console.log("[getTranslation] Error: ", e);
   }
 };
+
 export enum AppLocaleEnum {
   "EN" = "en",
   "FR" = "fr",

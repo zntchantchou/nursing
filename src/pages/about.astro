@@ -1,7 +1,87 @@
 ---
+import { getLocale } from "astro-i18n-aut";
 import BaseLayout from "../components/BaseLayout.astro";
+import { getTranslation } from "../utils/i18n";
+const l = getLocale(Astro.url);
+const [
+  title,
+  h1,
+  p1,
+  p2,
+  h2,
+  p3,
+  l1a,
+  l1b,
+  l1c,
+  l1d,
+  l1e,
+  p4,
+  h3,
+  l2a,
+  l2b,
+  l2c,
+  l2d,
+  p5,
+  h4,
+] = await Promise.all([
+  getTranslation(l, "title", "about"),
+  getTranslation(l, "h1", "about"),
+  getTranslation(l, "p1", "about"),
+  getTranslation(l, "p2", "about"),
+  getTranslation(l, "h2", "about"),
+  getTranslation(l, "p3", "about"),
+  getTranslation(l, "l1a", "about"),
+  getTranslation(l, "l1b", "about"),
+  getTranslation(l, "l1c", "about"),
+  getTranslation(l, "l1d", "about"),
+  getTranslation(l, "l1e", "about"),
+  getTranslation(l, "p4", "about"),
+  getTranslation(l, "h3", "about"),
+  getTranslation(l, "l2a", "about"),
+  getTranslation(l, "l2b", "about"),
+  getTranslation(l, "l2c", "about"),
+  getTranslation(l, "l2d", "about"),
+  getTranslation(l, "p5", "about"),
+  getTranslation(l, "h4", "about"),
+]);
 ---
 
 <BaseLayout>
-  <h1>About</h1>
+  <h1>{title}</h1>
+  <h2>{h2}</h2>
+  <p>{p1}</p>
+  <p>{p2}</p>
+  <h2>{h2}</h2>
+  <p>{p3}</p>
+  <ul>
+    <li>{l1a}</li>
+    <li>{l1b}</li>
+    <li>{l1c}</li>
+    <li>{l1d}</li>
+    <li>{l1e}</li>
+  </ul>
+  <p>{p4}</p>
+  <h2>{h3}</h2>
+  <ul>
+    <li>{l2a}</li>
+    <li>{l2b}</li>
+    <li>{l2c}</li>
+    <li>{l2d}</li>
+  </ul>
+  <p>{p5}</p>
+  <h2>{h4}</h2>
 </BaseLayout>
+<style>
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+  }
+  ul {
+    list-style-type: circle;
+    margin: 1rem 1rem;
+  }
+</style>

@@ -1,12 +1,7 @@
 ---
-import { getLocale } from "astro-i18n-aut";
-import { getTranslation } from "../utils/i18n";
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import "../styles/globals.css";
-
-const greeting = await getTranslation(getLocale(Astro.url), "greeting");
-console.log("GREETING ", greeting);
 ---
 
 <html lang="en">
@@ -34,6 +29,9 @@ console.log("GREETING ", greeting);
 
 <style>
   #content {
-    min-height: calc(100vh - 12rem);
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: calc(100vh - 12rem);
+    padding: 1rem 2rem;
   }
 </style>

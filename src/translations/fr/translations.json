@@ -37,27 +37,6 @@
       "20": "Mesures d'accompagnement"
     }
   ],
-  "about_section": {
-    "title": "À propos de nous",
-    "h1": "Amanicare – Des soins avec professionnalisme et cœur",
-    "p1": "Bienvenue chez Amanicare – votre service de soins qui offre bien plus qu’une simple aide au quotidien. Nous prodiguons des soins avec expertise, chaleur et respect – et avec une profonde compréhension de vos besoins. Votre confiance est notre priorité.",
-    "p2": "Notre fondatrice, Sandra Atea, est une infirmière gériatrique diplômée et une responsable de service de soins certifiée. Elle a créé Amanicare pour offrir des soins de haute qualité qui non seulement fonctionnent, mais touchent également le cœur. Le nom Amani – qui signifie paix en swahili – est notre promesse : nous apportons calme, dignité et réconfort dans votre quotidien.",
-    "h2": "Ce que nous proposons – Nos services selon le SGB XI et §45b SGB XI",
-    "p3": "Chez Amanicare, vous bénéficiez de tous les services de soins à domicile conformément au Code de la sécurité sociale XI, notamment :",
-    "l1a": "Soins de base (par exemple, aide à l’hygiène personnelle, habillage, passage aux toilettes)",
-    "l1b": "Aide à la mobilité (par exemple, assistance pour se lever, marcher ou se positionner)",
-    "l1c": "Aide à la prise de repas",
-    "l1d": "Soutien domestique (par exemple, ménage, courses, cuisine)",
-    "l1e": "Services de soins et de soulagement selon le §45b SGB XI – par exemple, pour un accompagnement quotidien ou un soutien aux proches aidants",
-    "p4": "Nous vous offrons des soins adaptés à vos souhaits, besoins et circonstances de vie individuels.",
-    "h3": "Ce qui nous distingue :",
-    "l2a": "Des soins attentionnés et professionnels, centrés sur la personne",
-    "l2b": "Une équipe multilingue et multiculturelle",
-    "l2c": "Des soins sensibles à la culture, respectant vos origines, traditions et besoins",
-    "l2d": "Du temps pour écouter, de la patience pour comprendre et du cœur pour soigner",
-    "p5": "Que vous cherchiez un soutien pour vous-même ou pour un être cher, chez nous, vous trouverez bien plus que des soins : Vous trouverez confiance, empathie, bienveillance et un accompagnement attentif, sur un pied d’égalité.",
-    "h4": "Amanicare – où les soins créent la confiance."
-  },
   "sections": {
     "services": {
       "1": "Erweiterte kleine Körperpflege",
@@ -88,25 +67,25 @@
       "20": "Betreuungsmaßnahmen"
     },
     "about": {
-      "title": "Über uns",
-      "h1": "Amanicare – Pflege mit Professionalität und Herz",
-      "p1": "Willkommen bei Amanicare – Ihrem Pflegedienst, der mehr bietet als nur Hilfe im Alltag. Wir pflegen mit Fachkompetenz, Herzlichkeit und Respekt – und mit einem tiefen Verständnis für Sie. Für uns zählt Ihr Vertrauen.",
-      "p2": "Unsere Gründerin Sandra Atea ist examinierte Altenpflegerin und zertifizierte Pflegedienstleitung. Sie hat Amanicare ins Leben gerufen, um eine qualitativ gute Pflege zu ermöglichen, die nicht nur funktioniert, sondern berührt. Der Name Amani – Swahili für Frieden – ist unser Versprechen: Wir bringen Ruhe, Würde und Geborgenheit in Ihren Alltag.",
-      "h2": "Was wir anbieten – unsere Leistungen nach SGB XI und §45b SGB XI",
-      "p3": "Bei Amanicare erhalten Sie alle Leistungen der häuslichen Pflege nach dem Sozialgesetzbuch XI, insbesondere:",
-      "l1a": "Grundpflege (z. B. Hilfe bei Körperpflege, An- und Auskleiden, Toilettengang)",
-      "l1b": "Mobilitätshilfen (z. B. Unterstützung beim Aufstehen, Gehen oder Lagern)",
-      "l1c": "Hilfe bei der Nahrungsaufnahme",
-      "l1d": "Hauswirtschaftliche Versorgung (z. B. Reinigung, Einkaufen, Kochen)",
-      "l1e": "Betreuung und Entlastung nach §45b SGB XI – z. B. zur Alltagsbegleitung oder als Unterstützung für pflegende Angehörige",
-      "p4": "Wir Pflegen Sie nach Ihrer individuellen Wünsche und Bedürfnisse, Wünsche und Lebenssituation.",
-      "h3": "Was uns besonders macht:",
-      "l2a": "Liebevolle, professionelle Betreuung, bei der der Mensch im Mittelpunkt steht",
-      "l2b": "Ein mehrsprachiges, multikulturelles Team",
-      "l2c": "Kultursensible Pflege, die Ihre Herkunft, Traditionen und Bedürfnisse respektiert",
-      "l2d": "Zeit zum Zuhören, Geduld zum Verstehen und Herz zum Pflegen",
-      "p5": "Ob Sie selbst Unterstützung suchen oder für einen geliebten Menschen – bei uns finden Sie mehr als Pflege: Sie finden Vertrauen, Empathie, Fürsorge und eine achtsame Begleitung auf Augenhöhe.",
-      "h4": "Amanicare – wo Pflege Vertrauen schafft."
+      "title": "À propos de nous",
+      "h1": "Amanicare – Des soins avec professionnalisme et cœur",
+      "p1": "Bienvenue chez Amanicare – votre service de soins qui offre bien plus qu’une simple aide au quotidien. Nous prodiguons des soins avec expertise, chaleur et respect – et avec une profonde compréhension de vos besoins. Votre confiance est notre priorité.",
+      "p2": "Notre fondatrice, Sandra Atea, est une infirmière gériatrique diplômée et une responsable de service de soins certifiée. Elle a créé Amanicare pour offrir des soins de haute qualité qui non seulement fonctionnent, mais touchent également le cœur. Le nom Amani – qui signifie paix en swahili – est notre promesse : nous apportons calme, dignité et réconfort dans votre quotidien.",
+      "h2": "Ce que nous proposons – Nos services selon le SGB XI et §45b SGB XI",
+      "p3": "Chez Amanicare, vous bénéficiez de tous les services de soins à domicile conformément au Code de la sécurité sociale XI, notamment :",
+      "l1a": "Soins de base (par exemple, aide à l’hygiène personnelle, habillage, passage aux toilettes)",
+      "l1b": "Aide à la mobilité (par exemple, assistance pour se lever, marcher ou se positionner)",
+      "l1c": "Aide à la prise de repas",
+      "l1d": "Soutien domestique (par exemple, ménage, courses, cuisine)",
+      "l1e": "Services de soins et de soulagement selon le §45b SGB XI – par exemple, pour un accompagnement quotidien ou un soutien aux proches aidants",
+      "p4": "Nous vous offrons des soins adaptés à vos souhaits, besoins et circonstances de vie individuels.",
+      "h3": "Ce qui nous distingue :",
+      "l2a": "Des soins attentionnés et professionnels, centrés sur la personne",
+      "l2b": "Une équipe multilingue et multiculturelle",
+      "l2c": "Des soins sensibles à la culture, respectant vos origines, traditions et besoins",
+      "l2d": "Du temps pour écouter, de la patience pour comprendre et du cœur pour soigner",
+      "p5": "Que vous cherchiez un soutien pour vous-même ou pour un être cher, chez nous, vous trouverez bien plus que des soins : Vous trouverez confiance, empathie, bienveillance et un accompagnement attentif, sur un pied d’égalité.",
+      "h4": "Amanicare – où les soins créent la confiance."
     }
   }
 }
