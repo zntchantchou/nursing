@@ -1,11 +1,15 @@
 TODO:
   ✔ create web nav menu @done(25-08-18 10:32)
   ✔ create files for translations @started(25-08-13 10:16) @done(25-08-18 10:32) @lasted(5d16m26s)
-  ☐ create language picker @started(25-08-18 10:43)
+  ✔ create language picker @started(25-08-18 10:43) @done(25-09-27 09:08) @lasted(5w4d22h25m23s)
+  ☐ fix browsing @started(25-09-30 10:52)
+  ☐ create the about page 
+  ☐ create the services page 
+  ☐ translate the about page 
   ☐ create mobile side menu
-  ☐ check for domain name availability
 
-Business:
+  Business:
+  ☐ check for domain name availability
   ☐ Curate list of designs
   ☐ ask for three or four colours to create palette
   ☐ choose price for yearly hosting 

@@ -3,16 +3,38 @@ import germanyLogo from "../assets/germany.png";
 import ukLogo from "../assets/uk.png";
 import franceLogo from "../assets/france.png";
 
-export const getTranslation = async (locale: string, key: string) => {
+export const getTranslation = async (
+  locale: AppLocaleEnum,
+  key: string,
+  sectionName?: string
+) => {
   try {
-    console.log("[getTranslation] LOCALE ", locale);
-    if (locale === AppLocaleEnum.EN) return getEntry(AppLocaleEnum.EN, key);
-    if (locale === AppLocaleEnum.FR) return getEntry(AppLocaleEnum.FR, key);
-    else return getEntry(AppLocaleEnum.DE, key);
+    if (!sectionName) return getEntry(locale, key);
+    const sectionTranslations = await getEntry(locale, sectionName);
+    if (sectionTranslations) {
+      const data = sectionTranslations?.body;
+      console.log("data ", data);
+      const errorMsg =
+        "translation not found for key: " +
+        key +
+        " with locale: " +
+        locale +
+        " and section: " +
+        sectionName;
+      if (!data) throw errorMsg;
+      const t = JSON.parse(data)[key];
+      if (!t) throw errorMsg;
+      return t;
+    }
   } catch (e) {
     console.log("[getTranslation] Error: ", e);
   }
 };
+export enum AppLocaleEnum {
+  "EN" = "en",
+  "FR" = "fr",
+  "DE" = "de",
+}
 
 export const getCurrentLocaleUrl = (url: URL, locale: string): string => {
   const rgx = /\/(de|fr|en)\//g;
@@ -23,12 +45,6 @@ export const getCurrentLocaleUrl = (url: URL, locale: string): string => {
   const urlStart = url.toString().slice(0, 7 + url.host.length) + "/" + locale;
   return urlStart + url.pathname;
 };
-
-export enum AppLocaleEnum {
-  "EN" = "en",
-  "FR" = "fr",
-  "DE" = "de",
-}
 
 type Language = {
   logo: ImageMetadata;
