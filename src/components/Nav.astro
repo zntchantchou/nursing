@@ -1,19 +1,20 @@
 ---
 import { getLocale } from "astro-i18n-aut";
-import { getTranslation } from "../utils/i18n";
+import { AppLocaleEnum, getTranslation } from "../utils/i18n";
 import LanguagePicker from "./ui/lp.astro";
 
-const locale = getLocale(Astro.url);
+const locale = getLocale(Astro.url) as AppLocaleEnum;
 const links = ["services", "about", "training", "charter", "jobs", "contact"];
 const navLinkPromises = links.map((t) => getTranslation(locale, t));
 const navLinks = await Promise.all(navLinkPromises);
+const companyName = "Amani Care";
 ---
 
-<nav class="root">
+<nav class="root p-8">
   <div class="logo-container">
-    <h1 class="title">Amani Care</h1>
+    <p class="text-3xl md:text-xl">{companyName}</p>
   </div>
-  <div class="links-container">
+  <div class="links-container hidden md:flex">
     <ul class="nav-links">
       {
         navLinks.map((link, i) => (
@@ -24,20 +25,84 @@ const navLinks = await Promise.all(navLinkPromises);
       }
     </ul>
   </div>
+
   <LanguagePicker />
+  <!-- Burger button: visible on mobile -->
+  <button
+    id="burger-toggle"
+    class="md:hidden focus:outline-none cursor-pointer"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+  >
+    <!-- Burger icon SVG (three lines) -->
+    <svg
+      id="burger-icon"
+      class="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <!-- Close icon SVG (X, hidden by default) -->
+    <svg
+      id="close-icon"
+      class="w-6 h-6 hidden"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
 </nav>
 
+<!-- Mobile sidemenu: hidden by default, slides in from left -->
+<div
+  id="mobile-menu"
+  class="fixed h-full w-[80vw] inset-0 bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-20 md:hidden"
+>
+  <div class="px-8 h-24 flex items-center">
+    {companyName}
+  </div>
+  <div class="flex flex-col items-center justify-between space-y-8">
+    <ul class="flex flex-col">
+      {
+        navLinks.map((link, i) => (
+          <li class="hover:text-zinc-400 cursor-pointer mb-3">
+            <a href={`/${locale}/${links[i]}/`}>{link?.data.toUpperCase()}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="text-white">© 2025 AmaniCare</div>
+  </div>
+</div>
+
+<!-- Optional backdrop for overlay effect (dims the page behind the menu) -->
+<div
+  id="menu-backdrop"
+  class="fixed inset-0 bg-opacity-50 hidden z-10 md:hidden"
+>
+</div>
+
 <style>
-  .title {
-    font-size: 2.2rem;
-  }
   .root {
     font-family: "DM Sans", sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 6rem;
-    padding: 0 2rem;
     background-color: #1a1a1a;
     color: #ffffff;
   }
@@ -68,3 +133,42 @@ const navLinks = await Promise.all(navLinkPromises);
     color: #cccccc;
   }
 </style>
+
+<script>
+  // Client-side JS for toggle
+  const toggleButton = document.getElementById("burger-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const backdrop = document.getElementById("menu-backdrop");
+  const burgerIcon = document.getElementById("burger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  toggleButton?.addEventListener("click", () => {
+    const isOpen = toggleButton?.getAttribute("aria-expanded") === "true";
+    toggleButton?.setAttribute("aria-expanded", isOpen ? "false" : "true");
+    mobileMenu?.classList.toggle("-translate-x-full");
+    backdrop?.classList.toggle("hidden");
+    burgerIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+
+    // Close menu when clicking backdrop
+    backdrop?.addEventListener("click", closeMenu, { once: true });
+  });
+
+  function closeMenu() {
+    toggleButton?.setAttribute("aria-expanded", "false");
+    mobileMenu?.classList.add("-translate-x-full");
+    backdrop?.classList.add("hidden");
+    burgerIcon?.classList.remove("hidden");
+    closeIcon?.classList.add("hidden");
+  }
+
+  // Optional: Close on escape key
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      toggleButton?.getAttribute("aria-expanded") === "true"
+    ) {
+      closeMenu();
+    }
+  });
+</script>

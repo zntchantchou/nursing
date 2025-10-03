@@ -1,4 +1,5 @@
 // @ts-check
+import tailwindcss from "@tailwindcss/vite";
 import { filterSitemapByDefaultLocale, i18n } from "astro-i18n-aut/integration";
 import { defineConfig } from "astro/config";
 
@@ -16,6 +17,14 @@ const locales = {
 export default defineConfig({
   build: {
     format: "directory",
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    server: {
+      host: true,
+      open: true, // This allows external access
+      // allowedHosts: ["my-hostname", "192.168.1.100", "localhost"], // Add specific hosts or true for all
+    },
   },
   integrations: [
     i18n({

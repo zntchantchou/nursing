@@ -5,14 +5,15 @@ TODO:
   ✔ fix browsing @started(25-09-30 10:52) @done(25-09-30 15:21) @lasted(4h29m38s)
   ✔ create the about page @started(25-09-30 15:21) @done(25-10-01 19:08) @lasted(1d3h47m14s)
   ✔ translate the about page @done(25-10-02 14:21)
-  ☐ create the services page 
+  ✔ install tailwind BEFORE ENFORCING THEME @done(25-10-03 12:26)
+  ✔ create the services page @done(25-10-03 12:26)
   ☐ create mobile side menu
   ☐ sortir des themes visuels a proposer
 
   Business:
+    
   ☐ check for domain name availability
   ☐ Curate list of designs
   ☐ ask for three or four colours to create palette
   ☐ choose price for yearly hosting 
-  ☐ install tailwind BEFORE ENFORCING THEME
   ☐ create one page per nav link
