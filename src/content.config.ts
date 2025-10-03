@@ -14,4 +14,8 @@ const de = defineCollection({
   loader: file("src/translations/de/translations.json"),
 });
 
-export const collections = { fr, en, de };
+const services = defineCollection({
+  loader: file("src/data/services.json"),
+});
+
+export const collections = { fr, en, de, services };

@@ -127,5 +127,8 @@ table {
 }
 * {
   font-family: "DM Sans", sans-serif;
-  overflow-y: hidden;
+}
+
+body {
+  overflow: hidden;
 }

@@ -1,7 +1,93 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../components/BaseLayout.astro";
+import { getTranslation } from "../utils/i18n";
+import { getLocale } from "astro-i18n-aut";
+
+const services = await getCollection("services");
+const locale = getLocale(Astro.url);
+const fmtServicesPromises = services.map(async ({ data }) => {
+  let result: { [key: string]: { id?: any; label: any; value: any } } = {
+    id: data.id,
+  };
+  delete data.id;
+  for (let [k, v] of Object.entries(data)) {
+    console.log("K ", k);
+    result[k] = {
+      label: await getTranslation(locale, k, "services"),
+      value:
+        k == "leistungsKomplex"
+          ? await getTranslation(
+              locale,
+              result?.id as unknown as string,
+              "services"
+            )
+          : v,
+    };
+  }
+  // console.log("Result ", result);
+  return result;
+});
+const translatedServices = await Promise.all(fmtServicesPromises);
+console.log("TRANS ", translatedServices);
 ---
 
 <BaseLayout>
-  <h1>Services</h1>
+  <h1 class="title">Services</h1>
+  <div class="services">
+    {
+      translatedServices.map((ts) => {
+        return (
+          <div class="service">
+            <p>
+              <span class="service-label">{ts["leistungsKomplex"]?.value}</span>
+            </p>
+            <p>
+              {ts["punktzahl"]?.label} : {ts["punktzahl"]?.value}
+            </p>
+            <p>
+              {ts["betrag"]?.label} : {ts["betrag"]?.value} €
+            </p>
+            <p>
+              {ts["zuschlag"]?.label} : {ts["zuschlag"]?.value} €
+            </p>
+            <p>
+              {ts["gesamtpreis"]?.label} : {ts["gesamtpreis"]?.value} €
+            </p>
+          </div>
+        );
+      })
+    }
+  </div>
 </BaseLayout>
+
+<style>
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  /* .service-label {
+    font-size: 1.1rem; */
+  /* } */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: ; */
+  }
+
+  .service {
+    cursor: pointer;
+    border-radius: 1rem;
+    margin: 0 0 1rem 1rem;
+    box-sizing: border-box;
+    padding: 0.6rem;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
+    height: 14rem;
+  }
+</style>

@@ -9,13 +9,12 @@ export const getTranslation = async (
   sectionName?: string
 ) => {
   try {
-    if (!sectionName) return getEntry(locale, key);
+    if (!sectionName) {
+      return getEntry(locale, key);
+    }
     const sections = await getEntry(locale, "sections");
-    console.log("sections ", sections);
     if (sections) {
-      console.log(`hello`);
       const sectionData = sections?.data;
-      console.log("data ", sectionData);
       const errorMsg =
         "translation not found for key: " +
         key +
@@ -28,7 +27,6 @@ export const getTranslation = async (
       if (!sectionTranslations) throw errorMsg;
       const translation = sectionTranslations[key];
       if (!translation) throw errorMsg;
-      console.log("translation: ", translation);
       return translation;
     }
   } catch (e) {

@@ -34,7 +34,12 @@
       "17a": "Einsatzpauschale LK 17a",
       "17b": "Einsatzpauschale LK 17b",
       "19a": "Versorgung und Betreuung in Wohngemeinschaften von Pflegebedürftigen der Pflegegrade 4 bis 5 LK 19a",
-      "20": "Betreuungsmaßnahmen"
+      "20": "Betreuungsmaßnahmen",
+      "leistungsKomplex": "leistungsKomplex",
+      "punktzahl": "punktzahl",
+      "betrag": "betrag",
+      "zuschlag": "zuschlag",
+      "gesamtpreis": "gesamtpreis"
     },
     "about": {
       "title": "Über uns",
@@ -58,36 +63,6 @@
       "h4": "Amanicare – wo Pflege Vertrauen schafft."
     }
   },
-  "service_items": [
-    {
-      "1": "Erweiterte kleine Körperpflege",
-      "2": "Kleine Körperpflege",
-      "3a": "Erweiterte große Körperpflege ohne Baden",
-      "3b": "Erweiterte große Körperpflege mit Baden",
-      "4": "Große Körperpflege",
-      "5": "Laggern/Betten",
-      "6": "Hilfe bei der Nahrungsaufnahme",
-      "7a": "Darm- und Blasenentleerung LK 7a",
-      "7b": "Darm- und Blasenentleerung LK 7b",
-      "8a": "Hilfestellung beim Verlassen der Wohnung LK 8a",
-      "8b": "Hilfestellung beim Wiederaufsuchen der Wohnung LK 8b",
-      "9": "Begleitung außer Haus",
-      "10": "Beneizen der wonnung",
-      "11a": "Reinigung der Wohnung LK 11a",
-      "11b": "Reinigung der Wohnung LK 11b",
-      "11c": "Reinigung der Wohnung LK 11c",
-      "12": "Wechseln und Waschen der Wäsche und Kleidung",
-      "13": "Einkaufen",
-      "14": "Zubereitung einer warmen Mahlzeit in der Häuslichkeit des Flegededunigen",
-      "15": "Zubereitung einer sonstigen Mahlzeit in der Häuslichkeit des Pflegebedürftigen",
-      "16a": "Erstbesuch",
-      "16b": "Folgebesuch",
-      "17a": "Einsatzpauschale LK 17a",
-      "17b": "Einsatzpauschale LK 17b",
-      "19a": "Versorgung und Betreuung in Wohngemeinschaften von Pflegebedürftigen der Pflegegrade 4 bis 5 LK 19a",
-      "20": "Betreuungsmaßnahmen"
-    }
-  ],
   "about_section": {
     "title": "Über uns",
     "h1": "Amanicare – Pflege mit Professionalität und Herz",
