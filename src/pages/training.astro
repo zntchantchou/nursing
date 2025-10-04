@@ -1,0 +1,11 @@
+---
+import { getLocale } from "astro-i18n-aut";
+import BaseLayout from "../components/BaseLayout.astro";
+import "../styles/globals.css";
+import { AppLocaleEnum, getTranslation } from "../utils/i18n";
+
+const locale = getLocale(Astro.url);
+const title = await getTranslation(locale as AppLocaleEnum, "training");
+---
+
+<BaseLayout title={title.data} />

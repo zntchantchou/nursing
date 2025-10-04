@@ -7,12 +7,12 @@ const locale = getLocale(Astro.url) as AppLocaleEnum;
 const links = ["services", "about", "training", "charter", "jobs", "contact"];
 const navLinkPromises = links.map((t) => getTranslation(locale, t));
 const navLinks = await Promise.all(navLinkPromises);
-const companyName = "Amani Care";
+const companyName = "A-great-name";
 ---
 
 <nav class="root p-8">
   <div class="logo-container">
-    <p class="text-3xl md:text-xl">{companyName}</p>
+    <p class="text-xl md:text-2xl">{companyName}</p>
   </div>
   <div class="links-container hidden md:flex">
     <ul class="nav-links">
@@ -30,7 +30,7 @@ const companyName = "Amani Care";
     <!-- Burger button: visible on mobile -->
     <button
       id="burger-toggle"
-      class="md:hidden focus:outline-none cursor-pointer"
+      class="md:hidden focus:outline-none cursor-pointer ml-4"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -86,7 +86,7 @@ const companyName = "Amani Care";
         ))
       }
     </ul>
-    <div class="text-white">© 2025 AmaniCare</div>
+    <div class="text-white">© 2025 A-great-name</div>
   </div>
 </div>
 

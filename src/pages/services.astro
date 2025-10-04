@@ -27,17 +27,18 @@ const fmtServicesPromises = services.map(async ({ data }) => {
   return result;
 });
 const translatedServices = await Promise.all(fmtServicesPromises);
+const title = await getTranslation(locale, "services");
 ---
 
-<BaseLayout>
-  <h1 class="title">Services</h1>
-  <div class="services">
+<BaseLayout title={title.data}>
+  <div id="services">
     {
       translatedServices.map((ts) => {
         return (
-          <div class="service">
-            <p>
-              <span class="service-label">{ts["leistungsKomplex"]?.value}</span>
+          <div class="flex flex-col justify-center px-4 box-border rounded-md border-2 border-black hover:border-gray-400 border-solid h-48 cursor-pointer">
+            <p class="mb-4 font-bold text-lg">
+              {" "}
+              {ts["leistungsKomplex"]?.value}
             </p>
             <p>
               {ts["punktzahl"]?.label} : {ts["punktzahl"]?.value}
@@ -67,24 +68,27 @@ const translatedServices = await Promise.all(fmtServicesPromises);
   /* .service-label {
     font-size: 1.1rem; */
   /* } */
-  .services {
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: ; */
+  #services {
+    /* background-color: burlywood; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    row-gap: 1rem;
+    column-gap: 1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100vh - 18rem);
   }
 
   .service {
     cursor: pointer;
     border-radius: 1rem;
-    margin: 0 0 1rem 1rem;
     box-sizing: border-box;
     padding: 0.6rem;
-    border: solid 2px black;
+    /* border: solid 2px black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 14rem;
     height: 14rem;
   }
 </style>
