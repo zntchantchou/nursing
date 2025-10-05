@@ -15,6 +15,7 @@ const locales = {
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://maquette.zacharie-ntc.dev",
   build: {
     format: "directory",
   },

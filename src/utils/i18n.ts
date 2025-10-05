@@ -46,7 +46,8 @@ export const getCurrentLocaleUrl = (url: URL, locale: string): string => {
     const result = url.toString().replace(rgx, "/" + locale + "/");
     return result;
   }
-  const urlStart = url.toString().slice(0, 7 + url.host.length) + "/" + locale;
+  console.log("URL ", url.toString());
+  const urlStart = url.toString().slice(0, 8 + url.host.length) + "/" + locale;
   return urlStart + url.pathname;
 };
 
