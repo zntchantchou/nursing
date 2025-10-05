@@ -15,6 +15,8 @@ const locales = {
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://zntchantchou.github.io",
+  base: "/nursing",
   build: {
     format: "directory",
   },

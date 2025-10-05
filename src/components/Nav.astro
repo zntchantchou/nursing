@@ -19,7 +19,9 @@ const companyName = "A-great-name";
       {
         navLinks.map((link, i) => (
           <li>
-            <a href={`/${locale}/${links[i]}/`}>{link?.data.toUpperCase()}</a>
+            <a href={`/nursing/${locale}/${links[i]}/`}>
+              {link?.data.toUpperCase()}
+            </a>
           </li>
         ))
       }
@@ -81,7 +83,9 @@ const companyName = "A-great-name";
       {
         navLinks.map((link, i) => (
           <li class="hover:text-zinc-400 cursor-pointer mb-3">
-            <a href={`/${locale}/${links[i]}/`}>{link?.data.toUpperCase()}</a>
+            <a href={`/nursing/${locale}/${links[i]}/`}>
+              {link?.data.toUpperCase()}
+            </a>
           </li>
         ))
       }
